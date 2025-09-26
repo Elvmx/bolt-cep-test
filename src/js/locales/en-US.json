@@ -1,0 +1,12 @@
+{
+    "greeting": "Hello",
+    "farewell": "Goodbye",
+    "settings": {
+        "title": "Settings",
+        "language": {
+            "title": "Language Settings",
+            "select": "Select Language"
+        },
+        "version": "Version"
+    }
+}

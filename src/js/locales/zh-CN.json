@@ -1,0 +1,12 @@
+{
+    "greeting": "你好",
+    "farewell": "再见",
+    "settings": {
+        "title": "设置",
+        "language": {
+            "title": "语言设置",
+            "select": "选择语言"
+        },
+        "version": "版本"
+    }
+}
