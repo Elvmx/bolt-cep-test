@@ -1,3 +1,11 @@
+- Photoshop 2021
+    - `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36`
+    - CSS 特性
+        - 支持：Flexbox 基础布局、Grid 基础布局、box-shadow、border-radius等常用属性。
+        - 不支持 / 需注意：Flex 布局中的gap属性（Chrome 84 + 才支持，74 版本需用margin替代）、CSS 原生变量（var()）的部分高级用法、aspect-ratio属性（Chrome 88 + 支持）。
+- Photoshop 2022
+    - `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36`
+
 <img src="src/js/assets/bolt-cep.svg" alt="Bolt CEP" title="Bolt CEP" width="400" />
 
 A lightning-fast boilerplate for building Adobe CEP Extensions in Svelte, React, or Vue built on Vite + TypeScript + Sass
@@ -105,9 +113,9 @@ Bolt CEP Info Page Link: https://hyperbrew.co/resources/bolt-cep
 
 - [Node.js 18](https://nodejs.org/en/) or later
 - Package manager either
-  - NPM (comes with Node.js)
-  - [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) ( ensure by running `yarn set version classic` )
-  - [PNPM](https://pnpm.io/installation) ( ensure by running `pnpm --version` )
+    - NPM (comes with Node.js)
+    - [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) ( ensure by running `yarn set version classic` )
+    - [PNPM](https://pnpm.io/installation) ( ensure by running `pnpm --version` )
 
 ## Quick Start
 
@@ -132,8 +140,8 @@ Install Dependencies (if not already done by create command)
 **⚠️ Enable PlayerDebugMode**
 
 - Adobe CEP's PlayerDebugMode must be enabled on your machine to test `yarn build` or `yarn dev` builds. Only an installed ZXP with `yarn zxp` will work without PlayerDebugMode enabled.
-  - Enable this easily with the [aescripts ZXP Installer](https://aescripts.com/learn/zxp-installer/) > Settings > Debug > Enable Debugging
-  - Or enable manually per OS by following the CEP Cookbook Instructions: [Adobe CEP 12 Cookbook](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_12.x/Documentation/CEP%2012%20HTML%20Extension%20Cookbook.md#debugging-unsigned-extensions)
+    - Enable this easily with the [aescripts ZXP Installer](https://aescripts.com/learn/zxp-installer/) > Settings > Debug > Enable Debugging
+    - Or enable manually per OS by following the CEP Cookbook Instructions: [Adobe CEP 12 Cookbook](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_12.x/Documentation/CEP%2012%20HTML%20Extension%20Cookbook.md#debugging-unsigned-extensions)
 
 Build the extension (must run before `dev`, can also run after for panel to work statically without the process) Symlink is created to extensions folder.
 
@@ -238,12 +246,12 @@ CEP
 
 ```js
 evalTS("myFunc", "test").then((res) => {
-  console.log(res);
+    console.log(res);
 });
 
 evalTS("myFuncObj", { height: 90, width: 100 }).then((res) => {
-  console.log(res.x);
-  console.log(res.y);
+    console.log(res.x);
+    console.log(res.y);
 });
 ```
 
@@ -271,10 +279,7 @@ evalES(`helloWorld("${csi.getApplicationID()}")`);
 You will also want to use this function for calling ExtendScript functions in the global scope directly, by passing `true` to the second parameter:
 
 ```js
-evalES(
-  `alert("Hello from ExtendScript :: " + app.appName + " " + app.version)`,
-  true,
-);
+evalES(`alert("Hello from ExtendScript :: " + app.appName + " " + app.version)`, true);
 ```
 
 ---
@@ -307,8 +312,8 @@ export type EventTS = {
 import { listenTS } from "../lib/utils/bolt";
 
 listenTS("myCustomEvent", (data) => {
-  console.log("oneValue is", data.oneValue);
-  console.log("anotherValue is", data.anotherValue);
+    console.log("oneValue is", data.oneValue);
+    console.log("anotherValue is", data.anotherValue);
 });
 ```
 
@@ -382,11 +387,11 @@ You can add your own Ponyfils by passing them into the `jsxPonyfill()` function 
 
 ```js
 jsxPonyfill([
-  {
-    find: "Array.isArray",
-    replace: "__isArray",
-    inject: `function __isArray(arr) { try { return arr instanceof Array; } catch (e) { return false; } };`,
-  },
+    {
+        find: "Array.isArray",
+        replace: "__isArray",
+        inject: `function __isArray(arr) { try { return arr instanceof Array; } catch (e) { return false; } };`,
+    },
 ]);
 ```
 
