@@ -10,5 +10,6 @@
             "../../node_modules/types-for-adobe/shared/PlugPlugExternalObject"
         ]
     },
-    "include": ["./**/*"]
+    "include": ["./**/*"],
+    "exclude": ["./lib/json2.js"]
 }
